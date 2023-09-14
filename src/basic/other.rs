@@ -16,6 +16,26 @@ pub fn is_armstrong(number: i32) -> bool {
             .sum()
 }
 
+#[allow(unused)]
+pub fn sum_digits(number: i32) -> i32 {
+    number
+        .to_string()
+        .chars()
+        .map(|d| d.to_digit(10).unwrap() as i32)
+        .sum()
+}
+
+#[allow(unused)]
+pub fn reverse(number: i32) -> i32 {
+    number
+        .to_string()
+        .chars()
+        .rev()
+        .collect::<String>()
+        .parse::<i32>()
+        .unwrap()
+}
+
 #[cfg(test)]
 mod tests {
     use crate::basic::other::*;
@@ -36,5 +56,23 @@ mod tests {
         assert_eq!(is_armstrong(371), true);
         assert_eq!(is_armstrong(407), true);
         assert_eq!(is_armstrong(1634), true);
+    }
+
+    #[test]
+    fn test_sum_digits() {
+        assert_eq!(sum_digits(123), 6);
+        assert_eq!(sum_digits(234), 9);
+        assert_eq!(sum_digits(371), 11);
+        assert_eq!(sum_digits(407), 11);
+        assert_eq!(sum_digits(1634), 14);
+    }
+
+    #[test]
+    fn test_reverse() {
+        assert_eq!(reverse(123), 321);
+        assert_eq!(reverse(234), 432);
+        assert_eq!(reverse(371), 173);
+        assert_eq!(reverse(407), 704);
+        assert_eq!(reverse(1634), 4361);
     }
 }
