@@ -1,5 +1,5 @@
 #[allow(unused)]
-pub fn factorial_recursive(number: i32) -> i32 {
+pub fn factorial_recursive(number: u128) -> u128 {
     if number <= 1 {
         1
     } else {
@@ -8,7 +8,7 @@ pub fn factorial_recursive(number: i32) -> i32 {
 }
 
 #[allow(unused)]
-pub fn factorial_iterative(number: i32) -> i32 {
+pub fn factorial_iterative(number: u128) -> u128 {
     let mut factorial = 1;
 
     for n in 2..=number {
@@ -31,6 +31,7 @@ mod tests {
         assert_eq!(factorial_recursive(4), 24);
         assert_eq!(factorial_recursive(5), 120);
         assert_eq!(factorial_recursive(10), 3628800);
+        assert_eq!(factorial_recursive(20), 2432902008176640000);
     }
 
     #[test]
@@ -42,5 +43,6 @@ mod tests {
         assert_eq!(factorial_iterative(4), 24);
         assert_eq!(factorial_iterative(5), 120);
         assert_eq!(factorial_iterative(10), 3628800);
+        assert_eq!(factorial_iterative(20), 2432902008176640000);
     }
 }

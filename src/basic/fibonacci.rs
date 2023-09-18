@@ -1,5 +1,5 @@
 #[allow(unused)]
-pub fn nth_term_recursive(n: i32) -> i32 {
+pub fn nth_term_recursive(n: u32) -> u32 {
     if n <= 2 {
         1
     } else {
@@ -8,7 +8,7 @@ pub fn nth_term_recursive(n: i32) -> i32 {
 }
 
 #[allow(unused)]
-pub fn nth_term_iterative(n: i32) -> i32 {
+pub fn nth_term_iterative(n: u32) -> u32 {
     if n <= 2 {
         1
     } else {

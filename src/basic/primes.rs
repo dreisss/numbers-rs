@@ -1,9 +1,9 @@
 #[allow(unused)]
-fn is_prime(number: i32) -> bool {
+fn is_prime(number: u32) -> bool {
     if number <= 1 {
         false
     } else {
-        for n in 2..=(number as f32).sqrt() as i32 {
+        for n in 2..=(number as f32).sqrt() as u32 {
             if number % n == 0 {
                 return false;
             }

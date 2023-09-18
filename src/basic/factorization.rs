@@ -1,5 +1,5 @@
 #[allow(unused)]
-pub fn factors(number: i32) -> Vec<i32> {
+pub fn factors(number: u32) -> Vec<u32> {
     let mut factors = vec![];
 
     for n in 1..=number {
@@ -12,8 +12,8 @@ pub fn factors(number: i32) -> Vec<i32> {
 }
 
 #[allow(unused)]
-pub fn is_perfect(number: i32) -> bool {
-    number == factors(number).into_iter().sum::<i32>() - number
+pub fn is_perfect(number: u32) -> bool {
+    number == factors(number).into_iter().sum::<u32>() - number
 }
 
 #[cfg(test)]

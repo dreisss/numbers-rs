@@ -1,38 +1,38 @@
 #[allow(unused)]
-pub fn is_palindrome(number: i32) -> bool {
+pub fn is_palindrome(number: u32) -> bool {
     let number_as_string = number.to_string();
     number_as_string == number_as_string.chars().rev().collect::<String>()
 }
 
 #[allow(unused)]
-pub fn is_armstrong(number: i32) -> bool {
+pub fn is_armstrong(number: u32) -> bool {
     let number_as_string = number.to_string();
     let number_length = number_as_string.len() as u32;
 
     number
         == number_as_string
             .chars()
-            .map(|n| n.to_digit(10).unwrap().pow(number_length) as i32)
+            .map(|n| n.to_digit(10).unwrap().pow(number_length))
             .sum()
 }
 
 #[allow(unused)]
-pub fn sum_digits(number: i32) -> i32 {
+pub fn sum_digits(number: u32) -> u32 {
     number
         .to_string()
         .chars()
-        .map(|d| d.to_digit(10).unwrap() as i32)
+        .map(|d| d.to_digit(10).unwrap())
         .sum()
 }
 
 #[allow(unused)]
-pub fn reverse(number: i32) -> i32 {
+pub fn reverse(number: u32) -> u32 {
     number
         .to_string()
         .chars()
         .rev()
         .collect::<String>()
-        .parse::<i32>()
+        .parse()
         .unwrap()
 }
 
