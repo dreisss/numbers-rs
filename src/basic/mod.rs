@@ -1,3 +1,4 @@
+pub mod comparisons;
 pub mod factorial;
 pub mod factorization;
 pub mod fibonacci;
